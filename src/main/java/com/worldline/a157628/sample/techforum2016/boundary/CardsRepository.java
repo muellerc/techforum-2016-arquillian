@@ -2,7 +2,6 @@ package com.worldline.a157628.sample.techforum2016.boundary;
 
 import com.worldline.a157628.sample.techforum2016.entity.Card;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

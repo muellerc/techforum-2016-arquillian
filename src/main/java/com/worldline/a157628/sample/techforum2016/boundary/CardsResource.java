@@ -1,11 +1,10 @@
 package com.worldline.a157628.sample.techforum2016.boundary;
 
-import java.net.URI;
-import java.util.Collection;
 import java.util.List;
 
 import com.worldline.a157628.sample.techforum2016.entity.Card;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -16,6 +15,7 @@ import javax.ws.rs.core.UriInfo;
 @Path("cards")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Stateless
 public class CardsResource {
 
     @Inject

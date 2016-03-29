@@ -7,7 +7,6 @@
 		<configuration>
 			<property name="jbossHome">target/wildfly-8.2.1.Final</property>
 			<property name="modulePath">target/wildfly-8.2.1.Final/modules</property>
-			<property name="serverConfig">standalone.xml</property>
 		</configuration>
 	</container>
 </arquillian>
