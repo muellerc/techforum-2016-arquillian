@@ -11,7 +11,7 @@ import java.util.UUID;
 @Singleton()
 public class CardsRepository {
 
-    @PersistenceContext(name = "techforum")
+    @PersistenceContext(unitName = "techforum")
     private EntityManager em;
 
     public List<Card> getAll() {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.jboss.org/ironjacamar/schema
+        http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+
+	<datasource jta="true" jndi-name="java:jboss/datasources/techforum" pool-name="techforum" enabled="true" use-java-context="true" use-ccm="false">
+        <connection-url>jdbc:derby:memory:myDB;create=true</connection-url>
+        <driver-class>org.apache.derby.jdbc.EmbeddedDriver</driver-class>
+	    <driver>derby-10.12.1.1.jar</driver>
+	    <validation>
+	        <validate-on-match>false</validate-on-match>
+	        <background-validation>false</background-validation>
+	    </validation>
+	</datasource>
+</datasources>

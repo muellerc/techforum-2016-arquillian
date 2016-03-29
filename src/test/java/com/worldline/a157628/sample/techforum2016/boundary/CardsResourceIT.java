@@ -45,6 +45,7 @@ public class CardsResourceIT {
     public static Archive<WebArchive> deploy() throws Exception {
         return ShrinkWrap.create(WebArchive.class, "techforum-2016-arquillian.war")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
+                .addAsWebInfResource("jboss-ds.xml")
                 //.addAsWebInfResource("web.xml", "web.xml")
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 //.addAsResource("META-INF/persistence.xml")

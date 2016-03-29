@@ -102,7 +102,6 @@
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
-                        <!-- <version>1.0.2.Final</version> -->
                         <version>1.1.0.Alpha7</version>
                         <executions>
                             <execution>
@@ -114,9 +113,6 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <jboss-home>target/wildfly-8.2.1.Final</jboss-home>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -150,6 +146,26 @@
                                     </artifactItems>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>deploy-jdbc-driver</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <inherited>false</inherited>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.apache.derby</groupId>
+                                            <artifactId>derby</artifactId>
+                                            <version>10.12.1.1</version>
+                                            <type>jar</type>
+                                            <overWrite>false</overWrite>
+                                            <outputDirectory>${project.build.directory}/wildfly-8.2.1.Final/standalone/deployments</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
                         </executions>
                     </plugin>
 
@@ -160,6 +176,7 @@
                         <configuration>
                             <systemPropertyVariables>
                                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                                <derby.stream.error.file>target/derby.log</derby.stream.error.file>
                             </systemPropertyVariables>
                         </configuration>
                         <executions>
